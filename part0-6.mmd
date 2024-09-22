@@ -1,0 +1,11 @@
+%% 0.6
+%% diagram depicting the situation where the user creates a new note using the single-page version of the app
+
+sequenceDiagram
+    participant browser
+    participant server
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa with user input
+    activate server
+    server-->>browser: Status code 201 {"message":"note created"}
+    deactivate server
